@@ -1,0 +1,144 @@
+﻿<section class="wrapper_l relative">
+    <section class="cont_login">      
+      <form id="" class="form_login wow zoomIn" action="cartera.php" method="">
+        <h2>Regístrate</h2>
+        <p>Crea tu perfil Juventudes Mira</p>
+        <section class="social_login padding">
+            <a href="" class="btn_login face">
+              <span>Ingresar con Facebook</span>
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="" class="btn_login twitter">
+              <span>Ingresa con Twitter</span>
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+        </section>  
+        <fieldset class="input-field">
+          <input type="text" class="validate" required>
+          <label for="icon_prefix">Nombre completo</label>
+        </fieldset>        
+        <fieldset class="input-field">
+          <input type="email" class="validate" required>
+          <label for="icon_prefix">Email</label>
+        </fieldset>        
+        <fieldset class="input-field">
+          <input type="number" class="validate" required>
+          <label for="icon_prefix">Teléfono/Celular</label>
+        </fieldset>      
+        <fieldset class="input-field">
+          <input type="password" class="validate" required>
+          <label for="icon_prefix">Contraseña</label>
+        </fieldset>
+
+         <div class="clear"></div>
+        <button type="submit" class="btnb waves-effect waves-light p_t_20" name="btnLogin">INGRESAR</button>                
+      </form>             
+    </section>
+</section>
+<section id="page">    
+    <div class="cb-slideshow">
+        <li><span>Image 01</span></li>
+        <li><span>Image 02</span></li>
+        <li><span>Image 01</span></li>
+        <li><span>Image 02</span></li>
+        <li><span>Image 02</span></li>
+    </div>
+</section>
+
+@*
+@model IEnumerable<JMLoc15.Models.Users>
+
+@{
+
+
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Avatar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacebookID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TwitterID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Avatar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacebookID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TwitterID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+*@

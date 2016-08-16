@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6 no-js" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 no-js" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 no-js" lang="en"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 no-js" lang="en"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="es">
+<!--<![endif]-->
+<!-- html5.js for IE less than 9 -->
+<!--[if lt IE 9]>  <script src="assets/js/lib/html5.js"></script>  <![endif]-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Juventudes MIRA</title>
+    <!-- core CSS -->
+    <link href="~/Content/css/app.css" rel="stylesheet">    
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,500' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="~/Content/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/Content/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/Content/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/Content/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="~/Content/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+<body>
+    <header class="animated fadeInDown">
+        <!-- <div class="bg_dates_head">
+            <div class="wrapper_l">
+                <div class="top-number right"><p><i class="fa fa-phone-square"></i>  +57 311 885 0378</p></div> 
+            </div>  
+        </div>     -->
+        <div class="wrapper_l">            
+            <a class="logo animatede fadeInUp" href="Home/Index"><img src="~/Content/images/logo.png"></a>
+            <nav>
+                <ul>
+                    <li><a href="Home/Index">Home</a></li>
+                    <li><a href="about-us.html">Acerca de nosotros</a></li>
+                    <li><a href="services.html">Valores</a></li>
+                    <li><a href="portfolio.html">Lineas de acción</a></li>
+                    <li><a href="blog.html">Galería</a></li>
+                    <li><a href="contact-us.html">Contáctanos</a></li>
+                    <li><a href="Users/Index" class="btnb">Registrate</a></li>
+                </ul>
+            </nav><!--/nav-->
+        </div>
+    </header><!--/header-->
+    <div class="redes">
+      <a class="facebook" href="https://www.facebook.com/movimientomira/" target="_blank">
+          <i class="fa fa-facebook"></i>
+      </a>
+      <a class="twitter" href="https://twitter.com/movimientomira" target="_blank">
+          <i class="fa fa-twitter"></i>
+      </a>
+      <a class="instagram" href="" target="_blank">
+          <i class="fa fa-instagram"></i>
+      </a>
+      <a class="youtube" href="" target="_blank">
+          <i class="fa fa-youtube"></i>                    
+      </a>
+    </div>
+
+    @RenderBody()
+
+    <footer>
+        <div class="wrapper_l">
+            <div class="row">
+                <div class="small-12 medium-6 large-12 columns">
+                    &copy; @DateTime.Now.Year <a target="_blank" href="http://jmloc15.azurewebsites.net/" title="Juventudes MIRA - Localidad 15">Juventudes MIRA</a>. All Rights Reserved.
+                </div>
+                <div class="small-12 medium-6 large-12 columns">
+                    <ul class="pull-right">
+                        <li><a href="Home/Index">Home</a></li>
+                        @*<li><a href="#">About Us</a></li>
+                        <li><a href="#">Faq</a></li>
+                        <li><a href="#">Contact Us</a></li>*@
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/jquery.prettyPhoto.js"></script>
+    <script src="~/Content/js/jquery.isotope.min.js"></script>
+    <script src="~/Content/js/wow.min.js"></script>
+    <script src="~/Content/js/main.js"></script>
+    <script src="~/Content/js/plugins.js"></script>
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

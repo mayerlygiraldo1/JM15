@@ -1,0 +1,1860 @@
+/*-----------------------------------------------------------
+* Nombre del proyecto: mirajuventudes - 2016
+* Nombre del archivo:  mirajuventudes.styl
+* Fecha de creación: 05 de Enero del 2016
+* Autor: Mayerly Giraldo
+
+------------------------------------------------------------*/
+
+/*--------------------COMENTARIOS-----------------------------
+* Ancho: 100%
+* Parallax: NO
+* Responsivo: NO
+-------------------------------------------------------------*/
+
+/**
+ * CONTENIDO...........Lo está leyendo!!
+ * RESET...............Establece los valores iniciales
+ * FONT-ICONS..........Importamos fuentes de iconos y font-face
+ * NIB.................Mixins para stylus
+ * VARIABLES...........Colores que se van a utilizar en la página
+ * MIXINS..............Funciones globales que se van a utilizar en stylus
+ * CLASES GLOBALES.....Clases que se van a utilizar en el html
+ * POP-UPS.............Estilos para los pop-ups
+ * BODY Y WRAPPER......Estilos body y base de la página
+ * LAODER..............Estilos loading de la página
+ * HEADER..............Estilos encabezado de la página
+ * INTERNAS............Estilos internas
+ * FOOTER..............Estilos pie de página
+ */
+ 
+/*------------------------------------*\
+    $ESTILOS-PLUGINS
+\*------------------------------------*/
+// @import url('../css/bootstrap.min.css')
+// @import url('../css/font-awesome.min.css')
+// @import url('../css/animate.min.css')
+// @import url('../css/prettyPhoto.css')
+@import url('../css/materialize.css')
+@import url('../css/plugins.css')
+@import url('../css/main.css')
+// @import url('../css/responsive.css')
+
+
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+@import 'reset.styl'
+
+/*------------------------------------*\
+    $FONT-ICONS
+\*------------------------------------*/
+// @import 'fuentes_iconos.styl'
+
+/*------------------------------------*\
+    $NIB
+\*------------------------------------*/
+@import 'nib'
+
+/*----------------------------------*\
+    $JEET
+\*----------------------------------*/
+// @import 'jeet'
+
+
+/*------------------------------------*\
+    $variables
+\*------------------------------------*/
+blanco = #fff
+negro = #131313
+negroo = #222224
+grisbtn = #5d5d5d
+grisbgosc = #494949
+grisborder = #808080
+azul = #0B275C
+azul2 = #2D55C5 
+dorado = #E2AF17
+dorado2 = #FAD413
+morado = #7266ba
+rojo = #d55462
+grisbg = #f0f3f4
+gris = #9b9b9b
+grism = #A6A6A6
+grist = #58666e
+grislin = rgba(120,130,140,.13)
+grisbor = #d8d8d8
+gristit = #f6f8f8
+grisp= #6C6C6C
+grishover = #f2f2f2
+bggris = #292A30
+cafe = #8a6d3b
+vendor-prefixes = webkit o ms moz official
+
+
+
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+trans(segun)
+  transition segun
+
+cursiva()
+  font-style italic
+
+mayus()
+  text-transform uppercase
+
+sub()
+  text-decoration underline
+
+normal()
+  text-decoration none
+
+bold()
+  font-weight bold
+
+block()
+  display block
+
+inline()
+  vertical-align middle
+  display inline-block
+
+none()
+  display none
+
+relative()
+  position relative
+  
+absolute()
+  position absolute
+
+fixed()
+  position fixed
+
+clear()
+  clear both
+  content ''
+  block()
+
+centrar()
+  margin 0 auto
+  block()
+
+centrarabs()
+  left 0px
+  right 0px
+  margin auto  
+
+alinear()
+   display inline-block
+   vertical-align top
+
+fontl()
+  font-family 'Raleway', sans-serif
+  // font-weight 300
+  
+fontr()
+  font-family 'Raleway', sans-serif
+  // font-weight 400 
+
+fontb()
+  font-family 'Raleway', sans-serif;
+  font-weight bold
+
+font(valor)
+  font-size valor
+
+box()
+  box-sizing border-box  
+
+boxs()
+  box-shadow 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+
+left2()
+  float left
+
+right2()
+  float right
+
+over()
+  overflow hidden  
+  
+bgcaja()
+  background blanco
+  border 1px solid grisbor
+
+
+/*------------------------------------*\
+    $CLASES GLOBALES
+\*------------------------------------*/
+.trans
+  transition 0.3s
+  
+.left
+  float left
+
+.right
+  float right
+
+.centrar
+  margin 0px auto
+  block()
+  relative()
+
+.border
+  border 1px solid azul
+
+.clear
+  clear both
+
+.relative
+  position relative
+
+.block
+  display block
+  
+.over
+  overflow hidden
+
+.boxs
+  box-shadow 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+
+.before
+  &:after
+    clear()
+
+.inline
+  display inline-block 
+  vertical-align middle
+  float none
+
+
+.btnb
+  text-align center
+  font(13px)
+  fontr()
+  letter-spacing 1px 
+  box()
+  color blanco
+  padding 11px 26px
+  trans(.4s)
+  over()
+  relative()
+  mayus()
+  border-radius 500px
+  display inline-block
+  background azul
+  box-shadow 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+  &:hover
+    background azul2
+  &.block
+    width 100%
+    display block
+  &.cl2
+    background azul2
+            
+ 
+.padding 
+  padding-left 0.9375em
+  padding-right 0.9375em
+
+.padd_all
+  padding 0.9375em  
+
+.padd_v
+  padding 0.9375em  0 
+
+body 
+  .p_b_80
+    padding-bottom 85px
+    +below(642px)
+      padding-bottom 48px
+  .p_t_20
+    +below(642px)
+      padding-top 30px
+
+
+.item1
+  box()
+  padding 0 10px 0 0
+.itemm
+  box()
+  padding 0 10px
+.item2
+  box()
+  padding 0 0 0 10px
+
+.link2
+  font(13px)
+  fontr()
+  trans(.3s)
+  color azul
+  sub()
+  &:hover
+    text-decoration none
+
+.linea
+  width 100%
+  border-bottom 1px solid grisbor
+  box-shadow  0 1px 2px 0 rgba(255, 255, 255, 0.07)  
+
+.lineap
+  width 100%
+  block()
+  relative()
+  border-bottom 1px solid rgba(grislin, .2)
+  margin 25px 0
+  box()
+  &:after
+  &:before
+    clear()
+
+.espacio
+  block()
+  width 100%
+  height 20px 
+
+.espacio_dos
+  block()
+  width 100%
+  height 10px   
+  
+.mask
+  width 100%
+  height 100%
+  absolute()
+  trans(.3s)
+  left 0
+  top 0
+  background rgba(negro, .75)
+  z-index 2
+
+body .sin_margin
+  margin 0 !important
+  
+.bg_g1
+  background #f9f9f9
+  
+.bor_all
+  border 1px solid grisbor
+  
+.bor_top
+  border-top 1px solid grisbor
+  
+.bor_right
+  border-right 1px solid grisbor
+  
+.margin_b
+  margin-bottom 20px
+
+.margin_b_dos
+  margin-bottom 10px
+
+.m_t_5
+  margin-top 5px
+  
+.morado
+  color morado
+.dorado2
+  color dorado2  
+.negro
+  color negroo
+  
+.bg_box
+  background blanco
+  border 1px solid grisbor
+
+.box
+  box()
+
+body .txt_center
+  text-align center
+
+body .txt_right
+  text-align right
+
+body .txt_left
+  text-align left 
+
+.text_small
+  font-size .75rem
+  color inherit
+  opacity .6
+
+.centerbtn
+  text-align center
+  &:after
+    clear()
+  a
+  button
+    alinear()
+    margin 0 10px 10px
+    // padding 10px 22px
+    i
+      margin-right 10px
+
+.border_b
+  border-bottom 1px solid grisbor
+
+
+.bg_panel
+  box-shadow 0 1px 2px rgba(0,0,0,.1),0 -1px 0 rgba(0,0,0,.02)
+  background blanco
+  
+
+
+
+/*-------------Grilla------------------*/
+.nav_organizaciones
+  position fixed 
+  width 100%
+  max-width 340px
+  height 100%
+  right 0
+  top 0
+  background blanco
+  border-left 1px solid grislin
+  padding 50px 0 0 0
+  box()  
+  .titulo_bright
+    height 64px
+    border-bottom 1px solid grisbor
+
+.nav_actividades
+  position fixed 
+  width 100%
+  max-width 300px
+  right 0
+  top 0
+  background blanco
+  border-left 1px solid grislin
+  padding 50px 0 0 0
+  trans(.7s)
+  box()  
+  .titulo_bright
+    height 68px
+    border-bottom 1px solid grisbor
+    
+body .nav_new_document
+  max-width 380px
+  trans(.7s)
+  .titulo_bright 
+    height 64px
+    .btn_gris
+      border-radius 50%
+      padding 5px 11px
+      box()
+      font(16px)
+      background-image url(../img/icons/close_circular.png)
+      background-position center
+      background-repeat no-repeat
+      width 30px
+      height 30px
+html body .close_nav_document
+  right -500px
+  
+body .open_modal_form
+  right 0
+.modales_form
+  position fixed 
+  z-index 8
+  width 100%
+  max-width 560px
+  height 100%
+  right -600px
+  top 0
+  trans(.3s)
+  background blanco
+  border-left 1px solid grislin
+  padding 50px 0 0 0
+  box()  
+  &.modal_small
+    max-width 380px
+  .titulo_bright
+    height 64px
+    border-bottom 1px solid grisbor
+
+body .date_cont_inicial
+  min-height 10px  
+  trans(.2s)
+  over()
+  relative()
+  textarea
+    height 60px
+.inicial
+  margin-right 340px
+.campana
+  margin-right 250px
+.documents
+  margin-right 380px
+
+.efect_blur
+  // -webkit-filter grayscale(1) blur(2px)
+  // -webkit-transform scale(1.03)
+  opacity .3 !important
+
+.mask_modalForm
+  width 100%
+  height 100%
+  fixed()    
+  top 0
+  left 0
+  background rgba(103, 103, 103, 0.85)
+  z-index -1
+  opacity 0
+  visibility hidden
+  trans(.4s)
+  cursor pointer
+  &.open
+    z-index 7
+    opacity 1
+    visibility visible    
+    
+
+/*Buscador*/
+.buscador
+  background blanco
+  border-radius 0px
+  border 1px solid rgba(120,130,140,.2)
+  margin 0
+  trans(.3s)
+  display inline-table
+  vertical-align middle
+  &:hover
+    box-shadow inset -10px -27px 30px -28px #e1e1e1
+  form
+    relative()
+    margin 2px 0 0 0
+  input
+    width 100%
+    min-width 200px
+    background transparent
+    border none
+    box()
+    color #B8B8B8
+    padding 5px 17px 7px
+    fontr()
+    font(13px)
+    trans(.4s)
+  input:focus
+    color grist    
+  .btn_bucador
+    background url(../img/icon_buscador.png) center  no-repeat
+    box()
+    padding 15px 22px
+    vertical-align top
+    absolute()
+    right 0
+    top 0
+  ul
+    absolute()
+    top 100%
+    left 0
+    width 250px
+    max-height 320px
+    margin 4px 0 0 0
+    overflow-y auto
+    overflow-x hidden
+    background blanco
+    border 1px solid grisbor
+    trans(.4s)
+    visibility hidden
+    z-index -1
+    opacity 0
+    &.open_busq
+      top 100%
+      visibility visible
+      z-index 2
+      opacity 1
+    li
+      box()
+      trans(.3s)
+      padding 5px
+      border-bottom 1px solid grisbor
+      &:after
+        clear both
+        content ''
+        relative()
+        block()
+      &:hover
+        background #F2F2F2
+        .img_perfil
+          margin 0 8px 0 0
+        p
+          color grisbtn
+      .img_perfil
+        width 35px
+        height 35px
+        trans(.4s)
+        margin 0 5px 0 0
+        left2()
+      p
+        font(13px)
+        box()
+        trans(.4s)
+        padding 0px 0 0 0
+        margin 0
+        height 18px
+        over()
+        span
+          color grisbtn
+          font(13px)
+          .circole
+            width 7px
+            height 7px
+            display inline-block
+            margin 0 4px 0
+            border-radius 50%
+          .dorado2
+            background dorado2
+          .azul              
+            background azul
+          .azul
+            background azul
+          .morado
+            background morado
+              
+    
+/*--Perfil--*/
+.img_perfil
+  width 45px
+  height 45px
+  background blanco url('../images/blog/avatar3.png') center no-repeat
+  border 3px solid rgba(blanco, .5)
+  background-size 100%
+  margin 0
+  over()
+  relative()
+  border-radius 50%
+  border 3px solid blanco
+  box()
+  img
+    height 100%  !important
+    max-width 100% !important
+    margin 0px auto
+    border-radius 50%
+
+body .sin_bor
+  border none !important
+
+.mask
+  width 100%
+  height 100%
+  absolute()
+  background rgba(0, 0, 0, 0.75)
+  z-index 1   
+
+.content_all
+  trans(.5s) 
+  
+.barra_int
+  width 100%
+  height 111px
+  relative()
+    
+.cont_home
+  width 100%
+  min-height 0px
+  relative()
+  padding 60px 0 30px 0
+
+.titulo
+  relative()
+  margin 0px auto 20px
+  box()
+  fontb()
+  padding 10px 0px
+  border-bottom 1px solid grisbor
+  &:before
+    width 100px
+    height 2px
+    absolute()
+    content ''
+    bottom -1px
+    left 0
+    z-index 2
+    background azul
+  h1
+  h2
+  h3
+    fontb()  
+    text-transform capitalize
+    font(20px)
+    color grisbtn
+  &:after
+    clear()
+
+body 
+  .subtitulo
+    relative()
+    fontr()  
+    font-weight bold
+    font(20px)
+    block()
+    background blanco
+    padding 0 0.9375em 10px
+    z-index 2
+    border-bottom 1px solid grislin
+    margin 0 0 20px
+    &:after
+      clear()
+    select
+      display inline-block
+      vertical-align middle
+      width auto
+      margin 0 0  0 15px
+      min-width 125px
+  
+
+.not_camp
+  color grist
+  font(13px)
+  box()
+  trans(.3s)
+  padding 2px 8px
+  border-radius 30px
+  border 1px solid grisbor
+  absolute()
+  right 10px 
+  top 15px
+  
+.list_blue_int
+  li
+    background url('../img/icons/list_blue.png') center left no-repeat
+    padding 0 20px 0 15px
+    left2()    
+    margin 0 0 4px 0
+    
+.close_inicial
+  border-radius 50%
+  padding 5px 11px !important
+  box()
+  font-size 16px
+  background-image url("../img/icons/close_circular.png")
+  background-position center
+  background-repeat no-repeat
+  width 30px
+  height 30px
+  &:hover
+    background-image url("../img/icons/close_circular.png")
+    background-position center
+    background-repeat no-repeat
+
+.panelB
+  block()
+  relative()
+  border 1px solid grislin
+  width 100%
+  box()
+  border-radius 3px
+  &:after
+    clear()
+
+.panelBlan
+  block()
+  relative()
+  border 1px solid grisborder
+  background blanco
+  width 100%
+  box()
+  &:after
+    clear()
+
+.panelBG
+  block()
+  relative()
+  border 1px solid rgba(grislin, .06)
+  background blanco
+  width 100%
+  border-radius 4px
+  box()
+  &:after
+    clear()
+
+.tittle_head
+  background grisbor
+  box()
+  padding 14px 14px 15px 14px
+  block()
+  relative()
+  &:after
+    clear()
+  h2
+    block()
+    mayus()
+    fontr()
+    font(15px)
+    color blanco
+  &.new
+    h2
+      color azul
+      > i
+        color blanco
+        font(20px)
+        margin -4px 5px 0 0
+        vertical-align middle
+        display inline-block
+      a
+        right2()
+        fontb()
+        mayus()
+        color azul
+        +below(450px)
+          font(12px)
+        i
+          color azul
+          margin 0 5px 0 0
+  
+
+.stado
+  width 52px
+  height 52px
+  border-radius 50%
+  display inline-block
+  color blanco
+  line-height 52px
+  text-align center
+  font(28px)
+  +below(440px)
+    width 44px
+    height 44px
+    line-height 44px
+    font(23px)
+  &.am
+    background azul
+  &.ro
+    background azul
+  &.az
+    background azul
+  &.ve
+    background azul
+    
+
+.bg_img
+  width 100%
+  block()
+  min-height 10px
+  box()
+  border 1px solid grisbor
+  img
+    width 100%
+    box()
+    padding 5px
+    mayus 0 auto
+    background blanco
+    
+
+
+
+
+/*------------------------------------*\
+    $BODY Y ELEMENTOS COMUNES
+\*------------------------------------*/
+body
+  background #f6f6f6    
+  fontr()
+  color grisbtn
+  margin 0
+  padding 0
+  overflow-x hidden
+  overflow-y auto
+  
+p
+  fontr()
+  font(14px)  
+  margin 0 0 7px 0
+  color grisbtn
+
+.marco
+  width 100%
+  max-width 100%
+  centrar()
+  box()
+
+.wrapper_b
+  // width 100%
+  // max-width 100%
+  margin 0 50px
+  block()
+  relative()
+  box()
+  &:after
+    clear()
+  +below(642px)
+    margin 0 10px
+
+.wrapper_l
+  width 100%
+  max-width 1170px
+  centrar()
+  box()
+  &:after
+    clear()
+
+.wrapper_m
+  width 100%
+  max-width 1170px
+  centrar()
+  box()
+  &:after
+    clear()
+
+.wrapper_s
+  width 100%
+  max-width 755px
+  centrar()
+  box()
+  &:after
+    clear()
+
+main
+  padding 86px 0 40px
+  box()
+  relative()
+  min-height 100%
+  &:after
+    clear()
+  +below(992px)
+    padding 50px 0 20px 0
+
+
+
+
+
+/*------------------------------------*\
+    $LOADER
+\*------------------------------------*/
+.preload 
+  background blanco
+  bottom 0
+  height 100%
+  left 0
+  position fixed
+  right 0
+  top 0
+  width 100%
+  z-index 9999  
+  .loading
+    absolute()
+    width 100%
+    height 100%
+    background blanco
+  .logo_load
+    trans(.5s)
+    -webkit-animation agrandar 2s infinite
+    max-width 240px
+    height auto
+    margin auto
+    top 48%
+    absolute()
+    left 0
+    right 0
+    img
+      height auto
+      width 100%
+      margin 0 auto
+      box()
+      padding 0 10px
+      block()
+
+
+
+     
+
+
+
+
+  
+
+/*------------------------------------*\
+    $HEADER
+\*------------------------------------*/
+.bg_dates_head
+  background azul
+  &:after
+    clear()
+header
+  background blanco
+  width 100%
+  left 0
+  height auto
+  trans(.4s)
+  fixed()
+  z-index 992
+  top 0 
+  border-top 2px solid azul
+  box-shadow 0 2px 2px rgba(0, 0, 0, 0.14),0 1px 0 rgba(0,0,0,0.03)
+  block()
+  &:after
+    clear()
+  .logo
+    block()
+    left2()
+    margin 1px 0
+    height 79px
+    trans(.3s)
+    relative() 
+    // +below(642px)
+    //   margin 11px 13px
+    img
+      height 100%
+  //Nav
+  nav
+    right2()
+    &:after
+      clear()
+    ul
+      text-align right
+      li
+        inline()
+        margin 0 14px
+        a
+          color gris
+          fontr()
+          font(15.5px)
+          relative()
+          block()
+          box()
+          over()
+          letter-spacing 0.5px
+          padding 32px 0
+          &:before
+            width 0%
+            height 2px 
+            background azul2
+            absolute()
+            content ''
+            bottom 0
+            left 0
+            right 0
+            margin auto
+            trans(.4s)          
+          &.activo,
+          &:hover
+            color azul2
+            &:before
+              width 100%
+        .btnb
+          &:hover
+            color blanco
+                        
+/*Redes*/
+.redes
+  fixed()
+  right 0
+  top 35%
+  z-index 999
+  margin 3px 0
+  width 50px
+  &:after
+    clear()
+  a
+    width 48px
+    height 48px 
+    line-height 53px
+    text-align center
+    background blanco
+    border-radius 6px 0 0 6px
+    block()
+    font(19px)
+    trans(.3s)
+    box()
+    margin 4px 0      
+    i
+      font(19px)
+      color blanco
+    &:hover
+      opacity 1
+      i
+        color blanco
+    +below(642px)
+      width 38px
+      height 38px
+      line-height 38px
+      font(16px)
+  .facebook 
+    background #3b5998
+    &:hover
+      background #3b5998
+  .twitter 
+    background #61acee
+    &:hover
+      background #61acee
+  .instagram 
+    background #125688
+    &:hover
+      background #125688
+  .youtube 
+    background #cc181e
+    &:hover
+      background #cc181e
+
+
+
+/*Nav Responsive*/
+.burger
+  absolute()
+  right  0
+  top 0
+  cursor pointer
+  none()
+  padding  0 13px
+  z-index 94
+  box()
+  trans(.3s)
+  +below(990px)
+    block()
+  ul
+    width 30px
+    margin 23px 0
+    li
+      height 2px
+      width 100%
+      background azul
+      margin 7px 0
+      border-radius 5px
+      trans(.3s)
+      position relative
+  &.open
+    ul 
+      li
+        &:nth-child(1)
+          transform rotate(45deg)
+          top 10px
+        &:nth-child(2)
+          opacity 0
+        &:nth-child(3)
+          transform rotate(-45deg)
+          top -8px
+       
+  
+
+
+/*------------------------------------*\
+    $REGISTER
+\*------------------------------------*/
+.cont_login
+  margin 0 auto
+  width 95%
+  max-width 342px
+  min-height 10px
+  box()
+  padding 18px 0 25px
+  trans(.3s)
+  background-color blanco
+  relative()
+  margin 110px 0 25px
+  right2()
+  z-index 3
+.cont_register
+  margin 0 0 60px
+  box()
+  trans(.3s)
+  background-color blanco  
+  block()
+  width 100%
+.logo_login
+  relative()
+  block()
+  &:after
+    clear()
+  img
+    margin 4px auto 14px auto
+    height 30px
+    width auto
+    max-width 100%
+.cont_login,
+.cont_register
+  .form_register  
+    padding 20px !important
+  .form_login,
+  .form_recuperar,
+  .form_register
+    padding 14px 20px 0 20px
+    h2
+      fontr2()
+      block()
+      text-align center
+      font(20px)
+      color negro
+      padding-bottom 10px
+    p
+      color negro
+      text-align center
+    .g-recaptcha
+      box()
+      block()
+      padding 20px 0      
+    ::-webkit-input-placeholder,
+    :-moz-placeholder,
+    ::-moz-placeholder,
+    :-ms-input-placeholder
+      color azul2
+    .btnb
+      padding 11px 50px
+      margin 0px auto
+      top 10px
+      block()   
+      width 100%
+    .link2
+      text-align center
+      block()
+      margin 2px auto auto 
+      color azul2
+      font-weight bold
+      font(14px)
+      normal()
+  .form_recuperar
+    .btn_border
+      width 192px
+      padding 12px 3px
+
+.social_login
+  block()
+  width 100%
+  &:after
+    clear()  
+  .btn_login
+    box()
+    width 100%
+    max-height 46px
+    padding 10px 0px 11px 22px
+    color blanco
+    border-radius 500px
+    over()
+    block()
+    relative()
+    border none
+    text-align left
+    margin 10px 0
+    &:before
+      width 100%
+      height 3px 
+      bottom 0
+      left 0
+      z-index 1
+      absolute()
+      content '' 
+    &:after
+      clear()  
+    span
+      inline()
+      font(13px)
+      line-height 24px
+    i
+      right 0
+      top 0
+      width 45px
+      height 45px
+      line-height 45px
+      border-radius 50%
+      text-align center
+      absolute()
+      font(20px)
+      trans(.4s)
+    &.face
+      background #3b5998
+      i
+        background #2f4676 
+      &:before
+        background #2f4676 
+    &.twitter
+      background #61acee
+      i
+        background #4c91cc 
+      &:before
+        background #4c91cc 
+
+
+
+/*------------------------------------*\
+    $PERFIL
+\*------------------------------------*/
+.portada_bg
+  width 100%
+  height 250px
+  relative()
+  background url('../images/bg_portada.jpg') center no-repeat
+  background-size cover
+  text-align center
+  .mask
+    background linear-gradient(to top,rgba(34,34,34,.99) 0,rgba(0,0,0,.35) 58%,rgba(0,0,0,0) 100%)
+  .wrapper_l
+    height 100%
+    min-height 100%
+  .img_perfil
+    width 110px
+    height 110px
+    relative()
+    margin 40px auto 15px
+    inline()
+    z-index 2
+    over()
+    border-radius 50%
+    img
+      max-width 100%
+      height 100%
+      margin 0 auto
+      block()
+  h1
+    fontr()
+    block()
+    font-weight bold
+    font(23px)
+    color rgba(blanco, .85)
+    relative()
+    z-index 2
+    text-align center    
+    margin 0 0 42px
+  .btnb
+    relative()
+    margin 0 auto 20px
+    z-index 2
+    &:hover
+      color blanco
+
+
+
+
+
+
+
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+footer
+  background blanco
+  height auto
+  width 100%
+  z-index 9
+  relative()
+  bottom 0
+  left 0 
+  width 100%
+  +below(642px)
+    text-align center
+    relative()
+  &:after
+    clear()
+  p
+    font(13px)
+    margin 13px 20px 10px
+    color grisbtn
+    block()
+    +below(642px)
+      margin 13px 25px 10px 25px
+    span
+      fontb()
+      
+     
+
+/*-----AHORRANITO-----*/
+.creditos
+  color grism  
+  font(13px) 
+  fontr()
+  text-align center
+  a
+    fontl()
+    color grisbtn
+    &:hover
+      bold()
+      sub()
+
+.derechos-autor 
+  width  100% 
+  text-align center
+  relative()
+  margin  2px auto
+  block()
+  relative()
+  .derechos 
+    display inline-block
+    vertical-align top
+    color grism  
+    font(13px) 
+    fontr()
+    margin  0 7px 0 0     
+
+.footer-autor  
+  display inline-block
+  vertical-align top
+  height  auto
+  line-height  20px 
+  margin 12px 20px 0  0
+  right2()
+  +below(642px)
+    margin 0px auto 6px
+    block()
+    float none
+    text-align center
+    a
+      display inline-block
+  #ahorranito2 
+    background  url('../img/ahorranito.png') no-repeat 0px 0px 
+    width  21px 
+    height  22px 
+    display inline-block
+    vertical-align middle
+    margin-top 0
+    margin-right 2px
+    margin-bottom 0
+    margin-left 3px
+
+.footer-autor a  
+  font(13px) 
+  fontr()
+  color grisbtn  
+  text-decoration  none 
+  span 
+    color  #1d9ad4 
+.footer-autor a:hover
+  text-decoration  underline  
+  font-weight normal   
+
+
+/*------------------------------------*\
+    $ELEMENTOS FORMULARIO
+\*------------------------------------*/
+label   
+  font(13px)
+  fontr()
+  color grisbtn
+
+label 
+  span 
+    color grisbtn
+
+button 
+  cursor pointer
+  border none    
+
+
+/*--------------Input Blancos--------------------------*/
+.formweb
+  label   
+    font(13px)
+    line-height 13px
+    fontr()
+    color grisbtn
+    box()
+    padding 0 0 0px 4px
+    margin 0 0 5px 0
+    block()  
+  select
+    trans(.3s)
+    -webkit-appearance none
+    background-color blanco
+    background-image url("../img/flecha_select.png")
+    background-repeat no-repeat
+    background-position center right 8px
+    border 1px solid #D7D7D7 
+    border-radius 2px
+    block()
+    padding 8px 33px 9px 10px
+    color grisbtn
+    height auto
+    cursor pointer
+    box()
+    fontr()
+    font(14px)
+    width 100%
+    height 100%
+    text-align left
+    margin 0px 0 10px 
+    &:focus
+      background-image url("../img/flecha_select_h.png")
+      background-repeat no-repeat
+      background-position center right 8px;  
+
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  textarea 
+    transition all 0.2s ease-out
+    -webkit-appearance none
+    background blanco
+    border none
+    border-radius 2px
+    block()  
+    margin 0px 0 10px 0
+    padding 8px 12px 9px 12px
+    border 1px solid #D7D7D7
+    box()
+    height auto
+    fontr()
+    font(14px)
+    color grism
+    width 100%
+
+  input:focus[type="text"], input[type="text"]:hover,
+  input:focus[type="password"], input[type="password"]:hover,
+  input:focus[type="date"], input[type="date"]:hover,
+  input:focus[type="datetime"], input[type="datetime"]:hover,
+  input:focus[type="datetime-local"], input[type="datetime-local"]:hover,
+  input:focus[type="month"], input[type="month"]:hover,
+  input:focus[type="week"], input[type="week"]:hover,
+  input:focus[type="email"], input[type="email"]:hover,
+  input:focus[type="number"], input[type="number"]:hover,
+  input:focus[type="search"], input[type="search"]:hover,
+  input:focus[type="tel"], input[type="tel"]:hover,
+  input:focus[type="time"], input[type="time"]:hover,
+  input:focus[type="url"], input[type="url"]:hover,
+  textarea:focus, textarea:hover 
+    color negroo 
+  
+  
+  input:disabled[type="text"], input:disabled[type="text"]:hover,
+  input:disabled[type="password"], input:disabled[type="password"]:hover,
+  input:disabled[type="number"], input:disabled[type="number"]:hover,
+  input:disabled[type="email"], input:disabled[type="email"]:hover,
+  input:disabled[type="tel"], input:disabled[type="tel"]:hover
+    color grism
+    
+  input[type=text]:disabled+label, 
+  input[type=password]:disabled+label, 
+  input[type=number]:disabled+label, 
+  input[type=email]:disabled+label, 
+  input[type=tel]:disabled+label 
+    color #5d5d5d
+
+  textarea 
+    height 98px
+    
+  input:not([type]):focus:not([readonly])+label, input[type=date]:focus:not([readonly])+label, input[type=datetime-local]:focus:not([readonly])+label, input[type=datetime]:focus:not([readonly])+label, input[type=email]:focus:not([readonly])+label, input[type=number]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label, input[type=search]:focus:not([readonly])+label, input[type=tel]:focus:not([readonly])+label, input[type=text]:focus:not([readonly])+label, input[type=time]:focus:not([readonly])+label, input[type=url]:focus:not([readonly])+label, textarea.materialize-textarea:focus:not([readonly])+label
+      color grisbtn
+  
+  /*Calendario*/
+  .fecha    
+    relative()
+    cursor pointer
+    &:before
+      background #f1f1f1 url('../img/icons/calendar.png') center no-repeat !important
+      absolute()
+      left 1px
+      top 1px
+      content ''
+      z-index 2
+      width 37px
+      height 37px
+      border-radius 2px
+    &::after
+      clear()
+    input
+      cursor pointer
+      padding 8px 12px 9px 50px
+
+  input[type="submit"] 
+    mayus()
+    box()
+    font(13px)
+    border 2px solid blanco
+    padding 9px 40px
+    cursor pointer
+
+  button 
+    cursor pointer
+    
+  .border_form
+    border 1px solid grisbor
+    relative()
+    border-radius 4px
+    &:after
+      clear()
+
+
+/* Checkbox Simple*/
+.checkboxS 
+  block()
+  relative()
+  margin 0
+  input[type=checkbox] 
+    visibility hidden
+    none()
+  label 
+    padding 3px 0 3px 20px
+    // background url('../img/icons/check.png') left center no-repeat
+    transition all 400ms
+    cursor pointer
+    box()
+    fontr()
+    font(13px)
+    width 100%
+    color grism
+    &::before
+      width 11px
+      height 11px
+      border-radius 3px
+      left 0
+      top 4px
+      content ''
+      absolute()
+      border 1px solid negro
+    &::after
+      width 7px
+      height 7px
+      border-radius 50%
+      left 3px
+      top 7px
+      content ''
+      absolute()
+      background negro
+      trans(.3s)
+      transform scale(0)
+    &:hover 
+      text-decoration none
+    a 
+      color negro
+      sub()
+      trans(.3s)
+      
+  input[type=checkbox]:checked + label 
+    &::after
+      transform scale(1)
+      // background url('../img/icons/checked.png') left center no-repeat
+
+
+/* Radio Button Simple */
+.radiobtnS
+  margin 0 0 10px 0
+  input[type=radio] 
+    visibility hidden
+    display none
+  label 
+    padding 7px 13px 7px 36px
+    background-image url("../img/icons/radio1.png") 
+    background-repeat no-repeat
+    background-position left 
+    transition all 400ms
+    cursor pointer
+    color grism
+    margin 0 0 10px 0
+    box()
+    fontr()
+    font(13px)
+    span
+      fontl()
+      font(13px)
+      color #788d97
+    &:hover 
+      opacity .8
+        
+  input[type=radio]:checked + label 
+    background-image url("../img/icons/radio2.png") 
+    background-repeat no-repeat
+    background-position left 
+    transition all 400ms
+    span
+      color blanco
+
+
+/* Checkbox */
+.checkSite
+  block()
+  border-bottom 1px solid #e8e8e8
+  relative()
+  margin 0
+  input[type=checkbox],
+  input[type=radio] 
+    visibility hidden
+    none()
+  [type="checkbox"]:not(:checked) + label, 
+  [type="checkbox"]:checked + label
+  [type="radio"]:not(:checked) + label, 
+  [type="radio"]:checked + label
+    padding 15px 15px 14px 58px
+    transition all 400ms
+    cursor pointer
+    box()
+    color grisp
+    height auto
+    line-height auto
+    block()
+    border-left 4px solid blanco
+    relative()
+    &::before
+      width 21px
+      height 21px
+      font-family 'FontAwesome'
+      font-size 24px
+      color #e8e8e8
+      absolute()
+      left 18px 
+      right auto
+      top 0
+      bottom 0
+      margin auto
+      text-rendering auto
+      -webkit-font-smoothing antialiased
+      -moz-osx-font-smoothing grayscale
+      trans(.4s)
+      content "\f05d"
+      border none
+    &::after
+      none()
+    .img_perfil
+      margin 0 14px 0 0
+    .txt
+      width 78%
+      h3
+        fontb()
+        font(14px)
+        color azul
+        margin 0 0 2px
+      p
+        font(12px)
+        color rgba(grisp, .65)
+        margin 0
+        line-height 13px
+    .date
+      width 14%
+      text-align center
+      p
+        box()
+        padding 13px 10px
+        margin 0
+        text-align center
+        font(13px)
+        span
+          block()      
+  input[type=checkbox]:checked + label, 
+  input[type=radio]:checked + label 
+    border-left 4px solid azul
+    &::before
+      color azul
+      transform rotate(0deg)
+  [type=checkbox]:not(:checked):disabled+label:before
+    background none    
+
+/* Radio Button */
+.radiobtn
+  margin 0 0 10px 0
+  input[type=radio] 
+    visibility hidden
+    display none
+  label 
+    padding 7px 36px 7px 16px
+    background-image url("../img/icons/radio1.png") 
+    background-repeat no-repeat
+    background-position center
+    transition all 400ms
+    cursor pointer
+    color #788d97
+    margin 0 0 10px 0
+    box()
+    fontr()
+    font(15px)
+    span
+      fontl()
+      font(13px)
+      color #788d97
+    &:hover 
+      color blanco
+      background-image url("../img/icons/radio2.png") 
+      background-repeat no-repeat
+      background-position center
+      span
+        color blanco
+        
+  input[type=radio]:checked + label 
+    background-image url("../img/icons/radio2.png") 
+    background-repeat no-repeat
+    background-position center
+    transition all 400ms
+    color blanco
+    span
+      color blanco
+          
+
+/*---SCROLL ---*/ 
+::-webkit-scrollbar-track
+  border-radius 0px
+  background-color blanco
+::-webkit-scrollbar
+  width 7px
+  background-color #E0E0E0
+::-webkit-scrollbar-thumb
+  border-radius 5px
+  background-color #E0E0E0
+  
+
+/*---Alerts+--*/
+.alertp
+  block()
+  relative()
+  box()
+  padding 22px
+  border-radius 5px
+  border 2px dashed grisbor
+  background transparent
+  color rgba(grisp, .9)
+  margin 14px 0 20px
+  font(18px)
+  fontb()
+  text-align center
+  b
+    opacity .5
+    font(22px)
+    block()
+    margin 0 auto 5px
+  a
+    absolute()
+    right 4px
+    top 2px
+    padding 3px
+    opacity .6
+    font(14px)
+    color rgba(grisp, .7)
+
+
+
+
+/*------------------------------------*\
+    $MODALES Y MAS
+\*------------------------------------*/  
+.modal 
+  .modal-header
+    border-bottom 1px solid grisbor
+    box()
+    padding 18px 16px
+    block()
+    relative()
+    h1
+      color azul
+      font(15px)
+      fontr()
+      mayus()
+      letter-spacing 0px
+  .modal-footer
+    border-top 1px solid grisbor
+    block()
+    &:after
+      clear()
+    a,
+    button
+      margin 0 0 0 10px
+
+
+      
+
+
+
+  
+
+/*------------------------------------*\
+    $ESTILOS MODIFICADOS
+\*------------------------------------*/  
+body 
+  .rc-anchor-alert
+    display none !important
